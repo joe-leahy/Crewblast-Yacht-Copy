@@ -1,0 +1,66 @@
+import React from "react";
+import { Cursor, useTypewriter } from "react-simple-typewriter";
+import Image from "next/image";
+import Link from "next/link";
+import BackgroundCircles from "./BackgroundCircles";
+import { motion } from "framer-motion";
+
+const Hero = () => {
+  const [text, count] = useTypewriter({
+    words: ["Deckhand", "Engineer", "Stew", "Chef", "Electronics Tech / IT"],
+    loop: true,
+    delaySpeed: 900,
+  });
+
+  return (
+    <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center">
+      {/* <BackgroundCircles /> */}
+      <img
+        className="relative h-[250px] w-45 mx-auto top-8 object-cover"
+        src="./logo.png"
+        alt="logo"
+      />
+      <motion.div
+        initial={{
+          y: -300,
+          opacity: 0,
+          scale: 0.9,
+        }}
+        animate={{
+          y: 0,
+          opacity: 1,
+          scale: 1,
+        }}
+        transition={{
+          duration: 1,
+        }}
+      >
+        <h2 className="relative top-[-350px] text-lg uppercase white tracking-[15px]">
+          Coming Soon
+        </h2>
+      </motion.div>
+      <div className="z-20">
+        <h2 className="text-sm uppercase white pb-4 tracking-[15px]">
+          Find Qualified Crewmembers
+        </h2>
+        <h1 className="text-5xl lg:text-6xl font-semibold scroll-px-10">
+          <span className="mr-3">{text}</span>
+          <Cursor cursorColor="aqua" />
+        </h1>
+        <div className="pt-5">
+          <Link href="#about">
+            <button className="heroButton">About</button>
+          </Link>
+          <Link href="#signup">
+            <button className="signUpButton">Sign Up</button>
+          </Link>
+          <Link href="#contact">
+            <button className="heroButton">Contact</button>
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Hero;
