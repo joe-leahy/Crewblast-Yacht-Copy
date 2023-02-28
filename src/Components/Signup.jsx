@@ -19,7 +19,6 @@ const Signup = () => {
     "Stew",
     "Head Chef",
     "Sous-chef"
-
   ];
 
   const licenses = [

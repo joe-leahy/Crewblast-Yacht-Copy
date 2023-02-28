@@ -26,16 +26,19 @@ const Header = () => {
           fgColor="white"
           bgColor="transparent"
           network="telegram"
+          target="_blank"
         />
         <SocialIcon
           url="https://www.linkedin.com/company/crewblast/"
           fgColor="white"
           bgColor="transparent"
+          target="_blank"
         />
         <SocialIcon
           url="https://www.instagram.com/crewblast/"
           fgColor="white"
           bgColor="transparent"
+          target="_blank"
         />
       </motion.div>
 
@@ -53,7 +56,6 @@ const Header = () => {
         transition={{ duration: 1 }}
         className="flex flex-row items-center text-gray-300 cursor-pointer mx-5"
       >
-
           <SocialIcon network="email" fgColor="white" bgColor="transparent" />
           <p className="hidden md:inline-flex text-sm white">Contact Us</p>
       </motion.div>
