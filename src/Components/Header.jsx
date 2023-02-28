@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const Header = () => {
   return (
-    <header className="sticky top-5 flex items-start justify-between max-w-7xl mx-auto z-20 xl:items-center">
+    <header className="sticky top-0 md:top-5 md:bg-transparent z-[100] flex items-start justify-between max-w-7xl mx-auto xl:items-center bg-black">
       <motion.div
         initial={{
           x: -500,
@@ -19,7 +19,7 @@ const Header = () => {
         transition={{
           duration: 1,
         }}
-        className="flex flex-row items-center"
+        className="flex flex-row items-center mx-5"
       >
         <SocialIcon
           url="https://www.crewblast.co/"
@@ -51,12 +51,11 @@ const Header = () => {
           scale: 1,
         }}
         transition={{ duration: 1 }}
-        className="flex flex-row items-center text-gray-300 cursor-pointer"
+        className="flex flex-row items-center text-gray-300 cursor-pointer mx-5"
       >
-        <a href="mailto:jleahy@crewblastyacht.com">
+
           <SocialIcon network="email" fgColor="white" bgColor="transparent" />
           <p className="hidden md:inline-flex text-sm white">Contact Us</p>
-        </a>
       </motion.div>
     </header>
   );
