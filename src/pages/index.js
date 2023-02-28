@@ -4,6 +4,7 @@ import Header from "@/Components/Header";
 import Hero from "@/Components/Hero";
 import About from "@/Components/About";
 import Background from "@/Components/Background";
+import Signup from "@/Components/Signup";
 
 const Home = () => {
   return (
@@ -16,6 +17,9 @@ const Home = () => {
       <Hero />
       <section id="about">
         <About />
+      </section>
+      <section id='signup'>
+        <Signup/>
       </section>
     </div>
   );

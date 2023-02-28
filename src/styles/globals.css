@@ -9,4 +9,7 @@
   .signUpButton {
     @apply mx-6 px-10 py-6 border bg-[#00abee71] border-[#242424] rounded-full uppercase text-sm tracking-widest text-white transition-all hover:border-[#00acee] hover:bg-[#00acee];
   }
+  .submitButton {
+    @apply mx-6 px-10 py-6 border bg-[#00abee71] border-[#242424] rounded-full uppercase text-sm tracking-widest text-black transition-all hover:border-[#00acee] hover:bg-[#00acee];
+  }
 }
