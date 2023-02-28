@@ -22,7 +22,7 @@ const About = () => {
       />
       <div className="space-y-10 px-0 md:px-10">
         <h4 className="text-4xl font-semibold">
-          Here's the <span className="underline decoration-blue-500">story</span>.
+          Heres the <span className="underline decoration-blue-500">story</span>.
         </h4>
         <p className="text-md">
         We Operate Around The Globe & Have Tremendous Traction In Filling Staffing Needs In Multiple Countries.
