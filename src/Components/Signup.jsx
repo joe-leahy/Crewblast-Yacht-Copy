@@ -72,7 +72,7 @@ const Signup = () => {
       transition={{ duration: 1.5 }}
       className="flex flex-col relative h-screen text-center px-10 justify-evenly mx-auto items-center"
     >
-      <div className="bg-[white] opacity-50 h-[600px] w-[340px] md:w-[500px] rounded-xl flex flex-col justify-center items-center">
+      <div className="bg-[rgba(255,255,255,.75)] h-[600px] w-[340px] md:w-[500px] rounded-xl flex flex-col justify-center items-center">
         <h3 className="text-black mx-auto uppercase tracking-[13px] md:tracking-[20px] white text-2xl md:top-10 pb-5">
           Crew Sign-Up
         </h3>
@@ -85,8 +85,6 @@ const Signup = () => {
               </MenuItem>
             ))}
           </TextField>
-          <TextField id="outlined-basic" label="Phone" variant="outlined" />
-          <TextField id="outlined-basic" label="Email" variant="outlined" />
           <TextField
             select
             label="Highest License Held (If Any)"
@@ -98,6 +96,10 @@ const Signup = () => {
               </MenuItem>
             ))}
           </TextField>
+          <TextField id="outlined-basic" label="Country" variant="outlined" />
+          <TextField id="outlined-basic" label="Phone" variant="outlined" />
+          <TextField id="outlined-basic" label="Email" variant="outlined" />
+          
           <button className="submitButton">Submit</button>
         </form>
       </div>

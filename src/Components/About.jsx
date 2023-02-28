@@ -26,7 +26,10 @@ const About = () => {
           Heres the <span className="underline decoration-blue-500">story</span>
           .
         </h4>
-        <p className="text-md">
+        <p>
+        Crewblast Yacht is a leading service that helps yacht owners and management companies worldwide to quickly fill open positions with qualified crew. With a strong presence in multiple countries and an advanced technology platform, Crewblast can locate and secure crew members faster than any other means. The service guarantees a direct line to a comprehensive database of personnel, ensuring efficient and hassle-free staffing solutions. Trust Crewblast Yacht to find the right crew for your yacht, and get back to enjoying the open waters.
+        </p>
+        {/* <p className="text-md">
           We Operate Around The Globe & Have Tremendous Traction In Filling
           Staffing Needs In Multiple Countries.
         </p>
@@ -37,7 +40,7 @@ const About = () => {
         <p className="text-md">
           We Have A Direct Line To Our Entire Database Of Personnel At The Push
           Of A Button.
-        </p>
+        </p> */}
       </div>
     </motion.div>
   );
