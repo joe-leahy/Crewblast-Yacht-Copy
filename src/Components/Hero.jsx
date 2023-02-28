@@ -33,9 +33,9 @@ const Hero = () => {
           duration: 1,
         }}
       >
-        {/* <h2 className="relative top-[-280px] text-lg uppercase white tracking-[15px] md:top-[-350px]">
+        <h2 className="relative top-[-280px] text-lg uppercase white tracking-[15px] md:top-[-350px]">
           Coming Soon
-        </h2> */}
+        </h2>
       </motion.div>
       <div className="z-20">
         <h2 className="text-sm uppercase white pb-4 tracking-[5px] sm:tracking-[15px]">
