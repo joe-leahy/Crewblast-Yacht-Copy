@@ -73,8 +73,8 @@ const Signup = () => {
       transition={{ duration: 1.5 }}
       className="flex flex-col relative h-screen text-center px-10 justify-evenly mx-auto items-center"
     >
-      <div className="bg-[white] opacity-50 h-[600px] w-[400px] md:w-[500px] rounded-xl flex flex-col justify-center items-center">
-        <h3 className="text-black mx-auto uppercase tracking-[18px] md:tracking-[20px] white text-2xl md:top-10 pb-5">
+      <div className="bg-[white] opacity-50 h-[600px] w-[340px] md:w-[500px] rounded-xl flex flex-col justify-center items-center">
+        <h3 className="text-black mx-auto uppercase tracking-[13px] md:tracking-[20px] white text-2xl md:top-10 pb-5">
           Crew Sign-Up
         </h3>
         <form className="flex flex-col w-[300px] md:w-[400px] space-y-5">

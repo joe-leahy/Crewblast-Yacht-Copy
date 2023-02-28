@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 const Hero = () => {
   const [text, count] = useTypewriter({
-    words: ["Deckhand", "Engineer", "Stew", "Chef", "Electronics Tech / IT"],
+    words: ["Deckhand", "2nd Engineer", "Chief Stew", "Chef", "Electronics Tech / IT", "Bosun"],
     loop: true,
     delaySpeed: 900,
   });
