@@ -14,7 +14,7 @@ const Signup = () => {
     "2nd Engineer",
     "3rd Engineer",
     "Electronics Technician/IT",
-    "Interior Director",
+    "Purser",
     "Chief Stew",
     "Stew",
     "Head Chef",
