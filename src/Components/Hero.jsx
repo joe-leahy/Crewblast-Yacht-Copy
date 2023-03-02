@@ -12,7 +12,7 @@ const Hero = () => {
   });
 
   return (
-    <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center">
+    <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center z-1">
       <img
         className="relative h-[250px] w-45 mx-auto top-8 object-cover"
         src="./logo.png"
@@ -38,7 +38,7 @@ const Hero = () => {
         </h2>
       </motion.div>
       <div className="z-20">
-        <h2 className="text-sm uppercase white pb-4 tracking-[5px] sm:tracking-[15px]">
+        <h2 className="text-md uppercase white pb-4 tracking-[5px] sm:tracking-[15px]">
           Find Qualified Crewmembers
         </h2>
         <h1 className="text-5xl lg:text-6xl font-semibold scroll-px-10">

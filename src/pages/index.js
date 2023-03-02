@@ -8,7 +8,7 @@ import Signup from "@/Components/Signup";
 
 const Home = () => {
   return (
-    <div className="bg-[#363636] text-white h-screen sanp-y snap-mandatory overflow-scroll z-0">
+    <div className="bg-[#363636] text-white h-screen sanp-y snap-mandatory overflow-scroll">
       <Background/>
       <Head>
         <title>CrewBlast Yachting</title>
