@@ -35,7 +35,7 @@ const Header = () => {
           target="_blank"
         />
         <SocialIcon
-          url="https://www.instagram.com/crewblast/"
+          url="https://www.instagram.com/crewblastyacht/"
           fgColor="white"
           bgColor="transparent"
           target="_blank"

@@ -3,8 +3,8 @@ import { Cursor, useTypewriter } from "react-simple-typewriter";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-
 const Hero = () => {
+
   const [text, count] = useTypewriter({
     words: ["Deckhand", "2nd Engineer", "Chief Stew", "Chef", "Electronics Tech / IT", "Bosun"],
     loop: true,
