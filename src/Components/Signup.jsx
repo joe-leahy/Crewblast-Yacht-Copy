@@ -85,12 +85,24 @@ const Signup = () => {
     console.log("switch");
   };
 
+  const [body, setBody] = useState('')
+  const [to, setTo] = useState('') 
+
   const handleChange = (e) => {
     setInput((prevState) => ({
       ...prevState,
       [e.target.name]: e.target.value,
     }));
   };
+
+  const handleText = () => {
+    setBody(`Welcome to CrewBlast ${input.name.split(' ')[0]}, we're thrilled to have you on board!`)
+    setTo(`${input.phone}`)
+    addDoc(collection(db, "messages"), {
+      to,
+      body
+    });
+  }
 
   const handleSignUp = (e) => {
     e.preventDefault();
@@ -119,6 +131,7 @@ const Signup = () => {
       })
 
       .catch((error) => alert(error.message));
+      handleText()
     alert("Crewmember Added!");
   };
 
@@ -144,6 +157,7 @@ const Signup = () => {
               }}
               onSubmit={handleSignUp}
             >
+
               <div className="flex flex-col md:grid md:grid-cols-2 w-[300px] md:w-[600px] space-y-2 md:space-x-2">
                 <TextField
                   required
@@ -238,6 +252,61 @@ const Signup = () => {
               <button className="submitButton">Submit</button>
             </form>
               <button onClick={() => switchDisplay()}>Privacy Policy</button>
+              
+              {licenses.map((option) => (
+                <MenuItem key={option} value={option} sx={{ color: "black" }}>
+                  {option}
+                </MenuItem>
+              ))}
+            </TextField>
+            <TextField
+              required
+              id="outlined-basic"
+              label="Country"
+              name="country"
+              variant="outlined"
+              onChange={handleChange}
+              value={input.country}
+            />
+            <TextField
+            required
+              id="outlined-basic"
+              label="Phone"
+              name="phone"
+              variant="outlined"
+              onChange={handleChange}
+              value={input.phone}
+            />
+            <TextField
+            required
+              id="outlined-basic"
+              label="Email"
+              name="email"
+              variant="outlined"
+              onChange={handleChange}
+              value={input.email}
+            />
+            <TextField
+            required
+              id="outlined-basic"
+              label="Password"
+              name="password1"
+              type="password"
+              variant="outlined"
+              onChange={handleChange}
+              value={input.password1}
+            />
+            <TextField
+            required
+              id="outlined-basic"
+              label="Repeat Password"
+              name="password2"
+              type="password"
+              variant="outlined"
+              onChange={handleChange}
+              value={input.password2}
+            />
+            
           </div>
         </motion.div>
       ) :  (
