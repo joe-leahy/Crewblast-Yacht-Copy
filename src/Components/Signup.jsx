@@ -78,12 +78,24 @@ const Signup = () => {
     password2: "",
   });
 
+  const [body, setBody] = useState('')
+  const [to, setTo] = useState('') 
+
   const handleChange = (e) => {
     setInput((prevState) => ({
       ...prevState,
       [e.target.name]: e.target.value,
     }));
   };
+
+  const handleText = () => {
+    setBody(`Welcome to CrewBlast ${input.name.split(' ')[0]}, we're thrilled to have you on board!`)
+    setTo(`${input.phone}`)
+    addDoc(collection(db, "messages"), {
+      to,
+      body
+    });
+  }
 
   const handleSignUp = (e) => {
     e.preventDefault();
@@ -110,8 +122,8 @@ const Signup = () => {
           email: input.email,
         });
       })
-      
       .catch((error) => alert(error.message));
+      handleText()
     alert("Crewmember Added!");
   };
 
@@ -186,7 +198,7 @@ const Signup = () => {
             <TextField
             required
               id="outlined-basic"
-              label="WhatsApp Phone"
+              label="Phone"
               name="phone"
               variant="outlined"
               onChange={handleChange}
