@@ -4,6 +4,7 @@ import { TextField } from "@mui/material";
 import MenuItem from "@mui/material/MenuItem";
 import { auth, db } from "../../firebase";
 import { collection, doc, setDoc, addDoc } from "firebase/firestore";
+import PrivacyPolicy from "./PrivacyPolicy";
 
 const Signup = () => {
   const positions = [
@@ -78,6 +79,13 @@ const Signup = () => {
     password2: "",
   });
 
+  const [showPrivPol, setShowPrivPol] = useState(true);
+
+  const switchDisplay = () => {
+    setShowPrivPol(!showPrivPol)
+    console.log("switch");
+  };
+
   const [body, setBody] = useState('')
   const [to, setTo] = useState('') 
 
@@ -128,6 +136,8 @@ const Signup = () => {
   };
 
   return (
+    <> 
+    {showPrivPol ? (
     <motion.div
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
@@ -236,8 +246,28 @@ const Signup = () => {
           </div>
           <button className="submitButton">Submit</button>
         </form>
+        <button onClick={() => switchDisplay()}>Privacy Policy</button>
       </div>
     </motion.div>
+    ) :  (
+      <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 1.5 }}
+      className="flex flex-col relative h-screen text-center px-10 justify-evenly mx-auto items-center"
+    >
+      <div className="bg-[rgba(255,255,255,.75)] h-[700px] w-[340px] md:w-[700px] rounded-xl flex flex-col justify-center items-center">
+        <h3 className="text-black mx-auto uppercase tracking-[13px] md:tracking-[20px] white text-2xl md:top-10 pb-5">
+          Privacy Policy
+        </h3>
+        <div className="h-[500px] border border-gray-500 w-[500px] overflow-scroll">
+          <PrivacyPolicy />
+        </div>
+          <button onClick={() => switchDisplay()}>Sign Up</button>
+      </div>
+    </motion.div>
+    )}
+    </>
   );
 };
 
