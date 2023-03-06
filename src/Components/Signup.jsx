@@ -4,6 +4,7 @@ import { TextField } from "@mui/material";
 import MenuItem from "@mui/material/MenuItem";
 import { auth, db } from "../../firebase";
 import { collection, doc, setDoc, addDoc } from "firebase/firestore";
+import PrivacyPolicy from "./PrivacyPolicy";
 
 const Signup = () => {
   const positions = [
@@ -77,6 +78,12 @@ const Signup = () => {
     password1: "",
     password2: "",
   });
+  const [showPrivPol, setShowPrivPol] = useState(true);
+
+  const switchDisplay = () => {
+    setShowPrivPol(!showPrivPol)
+    console.log("switch");
+  };
 
   const handleChange = (e) => {
     setInput((prevState) => ({
@@ -110,123 +117,152 @@ const Signup = () => {
           email: input.email,
         });
       })
-      
+
       .catch((error) => alert(error.message));
     alert("Crewmember Added!");
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 1.5 }}
-      className="flex flex-col relative h-screen text-center px-10 justify-evenly mx-auto items-center"
-    >
-      <div className="bg-[rgba(255,255,255,.75)] h-[700px] w-[340px] md:w-[700px] rounded-xl flex flex-col justify-center items-center">
-        <h3 className="text-black mx-auto uppercase tracking-[13px] md:tracking-[20px] white text-2xl md:top-10 pb-5">
-          Crew Sign-Up
-        </h3>
-        <form
-          className="flex flex-col w-[300px] md:w-[600px] space-y-2 md:space-x-2"
-          onKeyPress={(event) => {
-            if (event.key === "Enter") {
-              event.preventDefault();
-            }
-          }}
-          onSubmit={handleSignUp}
+    <>
+      {showPrivPol ? (
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1.5 }}
+          className="flex flex-col relative h-screen text-center px-10 justify-evenly mx-auto items-center"
         >
-          <div className="flex flex-col md:grid md:grid-cols-2 w-[300px] md:w-[600px] space-y-2 md:space-x-2">
-            <TextField
-              required
-              id="outlined-basic"
-              label="Full Name"
-              name="name"
-              variant="outlined"
-              onChange={handleChange}
-              value={input.name}
-            />
-            <TextField
-            required
-              select
-              name="position"
-              label="Position"
-              defaultValue="Any"
-              onChange={handleChange}
-              value={input.position}
+          <div className="bg-[rgba(255,255,255,.75)] h-[700px] w-[340px] md:w-[700px] rounded-xl flex flex-col justify-center items-center">
+            <h3 className="text-black mx-auto uppercase tracking-[13px] md:tracking-[20px] white text-2xl md:top-10 pb-5">
+              Crew Sign-Up
+            </h3>
+            <form
+              className="flex flex-col w-[300px] md:w-[600px] space-y-2 md:space-x-2"
+              onKeyPress={(event) => {
+                if (event.key === "Enter") {
+                  event.preventDefault();
+                }
+              }}
+              onSubmit={handleSignUp}
             >
-              {positions.map((option) => (
-                <MenuItem key={option} value={option}>
-                  {option}
-                </MenuItem>
-              ))}
-            </TextField>
-            <TextField
-              select
-              label="Highest Credential Held (If Any)"
-              name="credential"
-              defaultValue="Any"
-              onChange={handleChange}
-              value={input.certification}
-            >
-              {licenses.map((option) => (
-                <MenuItem key={option} value={option} sx={{ color: "black" }}>
-                  {option}
-                </MenuItem>
-              ))}
-            </TextField>
-            <TextField
-              required
-              id="outlined-basic"
-              label="Country"
-              name="country"
-              variant="outlined"
-              onChange={handleChange}
-              value={input.country}
-            />
-            <TextField
-            required
-              id="outlined-basic"
-              label="WhatsApp Phone"
-              name="phone"
-              variant="outlined"
-              onChange={handleChange}
-              value={input.phone}
-            />
-            <TextField
-            required
-              id="outlined-basic"
-              label="Email"
-              name="email"
-              variant="outlined"
-              onChange={handleChange}
-              value={input.email}
-            />
-            <TextField
-            required
-              id="outlined-basic"
-              label="Password"
-              name="password1"
-              type="password"
-              variant="outlined"
-              onChange={handleChange}
-              value={input.password1}
-            />
-            <TextField
-            required
-              id="outlined-basic"
-              label="Repeat Password"
-              name="password2"
-              type="password"
-              variant="outlined"
-              onChange={handleChange}
-              value={input.password2}
-            />
+              <div className="flex flex-col md:grid md:grid-cols-2 w-[300px] md:w-[600px] space-y-2 md:space-x-2">
+                <TextField
+                  required
+                  id="outlined-basic"
+                  label="Full Name"
+                  name="name"
+                  variant="outlined"
+                  onChange={handleChange}
+                  value={input.name}
+                />
+                <TextField
+                  required
+                  select
+                  name="position"
+                  label="Position"
+                  defaultValue="Any"
+                  onChange={handleChange}
+                  value={input.position}
+                >
+                  {positions.map((option) => (
+                    <MenuItem key={option} value={option}>
+                      {option}
+                    </MenuItem>
+                  ))}
+                </TextField>
+                <TextField
+                  select
+                  label="Highest Credential Held (If Any)"
+                  name="credential"
+                  defaultValue="Any"
+                  onChange={handleChange}
+                  value={input.certification}
+                >
+                  {licenses.map((option) => (
+                    <MenuItem
+                      key={option}
+                      value={option}
+                      sx={{ color: "black" }}
+                    >
+                      {option}
+                    </MenuItem>
+                  ))}
+                </TextField>
+                <TextField
+                  required
+                  id="outlined-basic"
+                  label="Country"
+                  name="country"
+                  variant="outlined"
+                  onChange={handleChange}
+                  value={input.country}
+                />
+                <TextField
+                  required
+                  id="outlined-basic"
+                  label="WhatsApp Phone"
+                  name="phone"
+                  variant="outlined"
+                  onChange={handleChange}
+                  value={input.phone}
+                />
+                <TextField
+                  required
+                  id="outlined-basic"
+                  label="Email"
+                  name="email"
+                  variant="outlined"
+                  onChange={handleChange}
+                  value={input.email}
+                />
+                <TextField
+                  required
+                  id="outlined-basic"
+                  label="Password"
+                  name="password1"
+                  type="password"
+                  variant="outlined"
+                  onChange={handleChange}
+                  value={input.password1}
+                />
+                <TextField
+                  required
+                  id="outlined-basic"
+                  label="Repeat Password"
+                  name="password2"
+                  type="password"
+                  variant="outlined"
+                  onChange={handleChange}
+                  value={input.password2}
+                />
+              </div>
+              <button className="submitButton">Submit</button>
+            </form>
+              <button onClick={() => switchDisplay()}>Privacy Policy</button>
           </div>
-          <button className="submitButton">Submit</button>
-        </form>
-      </div>
-    </motion.div>
+        </motion.div>
+      ) :  (
+        <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1.5 }}
+        className="flex flex-col relative h-screen text-center px-10 justify-evenly mx-auto items-center"
+      >
+        <div className="bg-[rgba(255,255,255,.75)] h-[700px] w-[340px] md:w-[700px] rounded-xl flex flex-col justify-center items-center">
+          <h3 className="text-black mx-auto uppercase tracking-[13px] md:tracking-[20px] white text-2xl md:top-10 pb-5">
+            Privacy Policy
+          </h3>
+          <div className="h-[500px] border border-gray-500 w-[500px] overflow-scroll">
+            <PrivacyPolicy />
+
+          </div>
+
+            <button onClick={() => switchDisplay()}>Sign Up</button>
+        </div>
+      </motion.div>
+      )}
+    </>
   );
 };
 
 export default Signup;
+
