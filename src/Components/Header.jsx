@@ -57,10 +57,10 @@ const Header = () => {
         transition={{ duration: 1 }}
         className="flex flex-row items-center text-gray-300 cursor-pointer mx-5"
       >
-        <Link href='#contact'>
+
           <SocialIcon network="email" fgColor="white" bgColor="transparent" />
           <p className="hidden md:inline-flex text-sm white">Contact Us</p>
-          </Link>
+
       </motion.div>
     </header>
   );
