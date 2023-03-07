@@ -14,7 +14,9 @@ const Home = () => {
         <title>CrewBlast Yachting</title>
       </Head>
       <Header />
+      <section id='home'>
       <Hero />
+      </section>
       <section id="about">
         <About />
       </section>
