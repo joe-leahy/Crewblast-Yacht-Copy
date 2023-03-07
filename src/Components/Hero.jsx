@@ -39,7 +39,7 @@ const Hero = () => {
       </motion.div>
       <div className="z-20">
         <h2 className="text-md uppercase white pb-4 tracking-[5px] sm:tracking-[12px]">
-          Find Qualified Crewmemberss
+          Find Qualified Crewmembers
         </h2>
         <h1 className="text-5xl lg:text-6xl font-semibold scroll-px-10">
           <span className="mr-3">{text}</span>
