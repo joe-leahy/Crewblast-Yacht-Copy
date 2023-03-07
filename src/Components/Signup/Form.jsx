@@ -97,7 +97,7 @@ function Form({setView}) {
         }}
         onSubmit={handleSignUp}
       >
-        <div className="flex flex-col md:grid md:grid-cols-2 w-[300px] md:w-[600px] space-y-2 md:space-x-2">
+        <div className="flex flex-col md:grid md:grid-cols-2 w-[300px] md:w-[600px] gap-2">
           <TextField
             required
             id="outlined-basic"
@@ -112,6 +112,7 @@ function Form({setView}) {
             select
             name="position"
             label="Position"
+            variant="outlined"
             defaultValue=""
             onChange={handleChange}
             value={input.position}
