@@ -8,7 +8,7 @@ import { licenses } from './licenses';
 import { positions } from './positions';
 
 
-function form({setView}) {
+function Form({setView}) {
 
 
   const handleChange = (e) => {
@@ -198,5 +198,5 @@ function form({setView}) {
   )
 }
 
-export default form
+export default Form
 
