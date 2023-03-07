@@ -32,6 +32,7 @@ const Signup = () => {
     "USCG Master 200gt",
     "USCG Master 500gt",
     "USCG Master 1600gt",
+    "USCG Master 1600gt",
     "USCG Master Unlimited",
     "STCW Basic Safety Training",
     "RYA Yachtmaster",
@@ -41,9 +42,10 @@ const Signup = () => {
     "MCA Master 200gt",
     "MCA Master 500gt",
     "MCA Master 3000gt",
+    "MCA Master Unlimited",
     "MCA OOW (Officer of the Watch)",
     "MCA Chief Mate 3000gt",
-    "MCA Chief Mate 5000gt",
+    "MCA Chief Mate Unlimited",
     "RYA Powerboat Level 2",
     "RYA Personal Watercraft (PWC) Instructor",
     "STCW Basic Training",
@@ -111,6 +113,16 @@ const Signup = () => {
       .createUserWithEmailAndPassword(email, password)
       .then((userCredentials) => {
         const user = userCredentials.user;
+      })
+      .then(() => {
+        setDoc(doc(db, 'crewmembers', `${input.name}`), {
+          name: input.name,
+          position: input.position,
+          credential: input.credential,
+          country: input.country,
+          phone: `${input.phone}`,
+          email: input.email,
+        });
       })
       .then(() => {
         setDoc(doc(db, `${input.position}`, `${input.name}`), {
