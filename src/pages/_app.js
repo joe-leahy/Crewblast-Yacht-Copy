@@ -6,7 +6,7 @@ const App = ({ Component, pageProps }) => {
     <>
       <Script
         strategy="afterInteractive"
-        src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"
+        src="https://www.googletagmanager.com/gtag/js?id=G-TKTYJKD5MW"
       />
       <Script
       id='google-analytics'
