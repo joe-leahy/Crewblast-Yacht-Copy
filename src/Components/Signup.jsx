@@ -92,13 +92,14 @@ const Signup = () => {
     }));
   };
 
-  const handleText = () => {
+  const handleText = async () => {
     setBody(
       `Welcome to CrewBlast ${
         input.name.split(" ")[0]
       }, we're thrilled to have you on board!`
     );
     setTo(`${input.phone}`);
+    await new Promise(resolve => setTimeout(resolve, 100));
     addDoc(collection(db, "messages"), {
       to:to,
       body:body,
@@ -132,8 +133,8 @@ const Signup = () => {
         });
       })
       .catch((error) => alert(error.message));
+    // setView('welcome')
     handleText();
-    setView('welcome')
   };
 
   return (
