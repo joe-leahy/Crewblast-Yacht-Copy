@@ -82,9 +82,6 @@ const Signup = () => {
 
   const [view, setView] = useState("form");
 
-  const [body, setBody] = useState("");
-  const [to, setTo] = useState("");
-
   const handleChange = (e) => {
     setInput((prevState) => ({
       ...prevState,
@@ -93,18 +90,12 @@ const Signup = () => {
   };
 
   const handleText = async () => {
-    setBody(
-      `Welcome to CrewBlast ${
-        input.name.split(" ")[0]
-      }, we're thrilled to have you on board!`
-    );
-    setTo(`${input.phone}`);
-    await new Promise(resolve => setTimeout(resolve, 100));
     addDoc(collection(db, "messages"), {
-      to:to,
-      body:body,
+      to:input.phone,
+      body:`Welcome to CrewBlast ${
+        input.name.split(" ")[0]
+      }, we're thrilled to have you on board!`,
     });
-    console.log(to, body);
   };
 
   const handleSignUp = (e) => {
