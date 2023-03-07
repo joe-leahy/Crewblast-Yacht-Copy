@@ -100,8 +100,8 @@ const Signup = () => {
     );
     setTo(`${input.phone}`);
     addDoc(collection(db, "messages"), {
-      to,
-      body,
+      to:to,
+      body:body,
     });
     console.log(to, body);
   };
