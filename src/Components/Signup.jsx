@@ -254,7 +254,8 @@ const Signup = () => {
               </div>
               <button className="submitButton">Submit</button>
             </form>
-            <button onClick={() => setView("pp")}>Privacy Policy</button>
+            <button
+            className="text-gray-500 p-5" onClick={() => setView("pp")}>Privacy Policy</button>
           </div>
         </motion.div>
       ) : view === "pp" ? (

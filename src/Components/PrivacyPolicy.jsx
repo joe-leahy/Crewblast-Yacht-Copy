@@ -10,7 +10,7 @@ function PrivacyPolicy() {
   console.log(policyRef);
 
   return (
-          <p className="text-black">
+          <p className="text-black p-5">
             This policy applies to you and us CrewBlast, LLC d/b/a CrewBlast
             Yacht (hereinafter “CrewBlast Yacht Yacht” or “we” or “us”)
             regardless of the country in which you reside or are located. This
