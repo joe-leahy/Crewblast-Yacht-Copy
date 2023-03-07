@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import PrivacyPolicy from "./PrivacyPolicy";
-import WelcomeMessage from "./WelcomeMessage";
+import WelcomeMessage from "../WelcomeMessage";
 import Form from "./Form";
 
 const Signup = () => {

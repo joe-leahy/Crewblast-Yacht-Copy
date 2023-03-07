@@ -1,6 +1,8 @@
+
 import React, {useEffect, useState} from "react";
 import { useRouter } from "next/router";
 import { db, auth } from "../../firebase";
+import Background from "@/Components/Background";
 
 const CrewProfile = () => {
   const router = useRouter();
@@ -28,13 +30,19 @@ const CrewProfile = () => {
   }
 
   return (
-    <div>
-    <p>Name: {user.name}</p>
+    <div className="flex bg-[#363636] text-white h-screen overflow-scroll justify-center items-center">
+<Background />
+  {/* card */}
+  <div className="flex flex-col bg-[rgba(255,255,255,.75)] text-gray-500
+    h-[500px] w-[500px] justify-center items-center rounded-xl">
+  <p>Name: {user.name}</p>
     <p>Phone: {user.phone}</p>
     <p>Position: {user.position}</p>
     <p>Email: {user.email}</p>
     <p>Credential: {user.credential}</p>
     <p>Country: {user.country}</p>
+    <a href='#index'>Home</a>
+  </div>
   </div>
   )
 };
