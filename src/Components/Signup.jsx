@@ -133,7 +133,7 @@ const Signup = () => {
         });
       })
       .catch((error) => alert(error.message));
-    // setView('welcome')
+    setView('welcome')
     handleText();
   };
 
