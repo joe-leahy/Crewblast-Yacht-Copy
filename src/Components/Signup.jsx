@@ -9,7 +9,7 @@ import WelcomeMessage from "./WelcomeMessage";
 
 const Signup = () => {
   const positions = [
-    "Open / Any",
+    "Open-Any",
     "Captain",
     "First Mate",
     "Second Mate",
@@ -18,7 +18,7 @@ const Signup = () => {
     "Chief Engineer",
     "2nd Engineer",
     "3rd Engineer",
-    "Electronics Technician/IT",
+    "ETO",
     "Purser",
     "Chief Stew",
     "Stew",
