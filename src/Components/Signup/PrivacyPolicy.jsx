@@ -1,8 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { getStorage, ref } from "firebase/storage";
-import { storage } from "../../firebase";
-function PrivacyPolicy() {
+import { storage } from "../../../firebase";
+function PrivacyPolicy({ setView }) {
   const policyRef = ref(
     storage,
     "gs://crewblastyacht.appspot.com/documents/CBYPrivacyPolicy.pdf"
@@ -10,6 +10,18 @@ function PrivacyPolicy() {
   console.log(policyRef);
 
   return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 1.5 }}
+      className="flex flex-col relative h-screen text-center px-10 justify-evenly mx-auto items-center"
+    >
+      <div className="bg-[rgba(255,255,255,.75)] h-[700px] w-[340px] md:w-[700px] rounded-xl flex flex-col justify-center items-center">
+        <h3 className="text-black mx-auto uppercase tracking-[10px] md:tracking-[20px] white text-2xl md:top-10 pb-5">
+          Privacy Policy
+        </h3>
+        <div className="h-[500px] border border-gray-500 w-[320px] md:w-[500px] overflow-scroll">
+          {/* expand here for Policy */}
           <p className="text-black p-5">
             This policy applies to you and us CrewBlast, LLC d/b/a CrewBlast
             Yacht (hereinafter “CrewBlast Yacht Yacht” or “we” or “us”)
@@ -410,6 +422,15 @@ function PrivacyPolicy() {
             This cookie policy is updated regularly. If you have any questions
             about this policy, please contact hello@crewblastyacht.com
           </p>
+        </div>
+        <button
+          onClick={() => setView("form")}
+          className="mx-6 px-6 py-4 border mt-4 bg-[#00abee71] border-[#242424] rounded-full uppercase text-sm tracking-widest text-white transition-all hover:border-[#00acee] hover:bg-[#00acee]"
+        >
+          Return To Sign Up
+        </button>
+      </div>
+    </motion.div>
   );
 }
 

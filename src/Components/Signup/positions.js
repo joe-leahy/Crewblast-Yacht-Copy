@@ -1,0 +1,17 @@
+export const positions = [
+  "Open-Any",
+  "Captain",
+  "First Mate",
+  "Second Mate",
+  "Bosun",
+  "Deckhand",
+  "Chief Engineer",
+  "2nd Engineer",
+  "3rd Engineer",
+  "ETO",
+  "Purser",
+  "Chief Stew",
+  "Stew",
+  "Head Chef",
+  "Sous-chef",
+];
