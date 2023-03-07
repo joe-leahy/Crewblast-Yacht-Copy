@@ -127,7 +127,7 @@ const Signup = () => {
           position: input.position,
           credential: input.credential,
           country: input.country,
-          phone: `+1${input.phone}`,
+          phone: `${input.phone}`,
           email: input.email,
         });
       })
