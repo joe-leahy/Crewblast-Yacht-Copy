@@ -3,6 +3,7 @@ import React, {useEffect, useState} from "react";
 import { useRouter } from "next/router";
 import { db, auth } from "../../firebase";
 import Background from "@/Components/Background";
+import Link from "next/link";
 
 const CrewProfile = () => {
   const router = useRouter();
@@ -34,14 +35,30 @@ const CrewProfile = () => {
 <Background />
   {/* card */}
   <div className="flex flex-col bg-[rgba(255,255,255,.75)] text-gray-500
-    h-[500px] w-[500px] justify-center items-center rounded-xl">
-  <p>Name: {user.name}</p>
-    <p>Phone: {user.phone}</p>
-    <p>Position: {user.position}</p>
-    <p>Email: {user.email}</p>
-    <p>Credential: {user.credential}</p>
-    <p>Country: {user.country}</p>
-    <a href='#index'>Home</a>
+    h-[500px] w-[500px] justify-around items-center rounded-xl">
+      <h3 className="text-black mx-auto uppercase tracking-[13px] md:tracking-[20px] text-2xl pb-5">
+        Crew Profile
+      </h3>
+    <span className="text-left">Name: 
+    <span className="text-black text-right">{user.name}</span>
+    </span>
+    <span className="text-left">Email: 
+    <span className="text-black text-right">{user.email}</span>
+    </span>
+    <span className="text-left">Positon: 
+    <span className="text-black text-right">{user.position}</span>
+    </span>
+    <span className="text-left">Credential: 
+    <span className="text-black text-right">{user.credential}</span>
+    </span>
+    <span className="text-left">Country: 
+    <span className="text-black text-right">{user.country}</span>
+    </span>
+    <span className="text-left">Phone: 
+    <span className="text-black text-right">{user.phone}</span>
+    </span>
+    
+    <Link href="/#home"><button className="text-black">Home</button></Link>
   </div>
   </div>
   )
